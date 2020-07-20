@@ -3,13 +3,7 @@
 @section('content')
 
     <section>
-        @foreach($posts as $posts)
-            <div class="post">
-                <p class="post__title">
-                    {{ $posts->title }}
-                </p>
-            </div>
-        @endforeach
+        <x-post :posts="$posts"></x-post>
     </section>
 
 @endsection

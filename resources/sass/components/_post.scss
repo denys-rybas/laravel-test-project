@@ -1,7 +1,14 @@
 .post {
     display: flex;
+    flex-direction: column;
 
     &__title {
+        font-weight: 500;
+    }
 
+    &__short-description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

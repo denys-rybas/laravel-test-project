@@ -111,5 +111,16 @@ code {
 
 .post {
   display: flex;
+  flex-direction: column;
+}
+
+.post__title {
+  font-weight: 500;
+}
+
+.post__short-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
