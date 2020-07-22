@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('content');
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id'); // mb nullable
             $table->boolean('is_published')->default(false);
 
             $table->timestamps();
