@@ -1,12 +1,17 @@
 .post {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid $grey;
+    border-radius: 7px;
 
     &__title {
         font-weight: 500;
     }
 
     &__short-description {
+        color: $grey;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

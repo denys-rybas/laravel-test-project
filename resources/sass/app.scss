@@ -1,4 +1,12 @@
+/*base*/
 @import "base/reset";
-@import "components/button";
+/*utilities*/
+@import "utilities/variables";
+/*vendors*/
 @import "vendors/bulma";
+/*layout*/
+@import "layout/header";
+/*components*/
+@import "components/pagination";
 @import "components/post";
+@import "components/button";

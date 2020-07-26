@@ -10,7 +10,7 @@ class PostsService
     {
         return Post::select('title', 'slug', 'content', 'created_at', 'category_id')
             ->with('category')
-            ->get();
+            ->paginate(9);
     }
 
 }

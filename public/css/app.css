@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/*base*/
+
 /* Указываем box sizing */
 
 *,
@@ -92,6 +94,12 @@ select {
   }
 }
 
+/*utilities*/
+
+/*colors*/
+
+/*vendors*/
+
 strong {
   color: #E5E338;
   font-weight: 700;
@@ -109,9 +117,21 @@ code {
   text-transform: none;
 }
 
+/*layout*/
+
+/*components*/
+
+.pagination {
+  margin: 10px 0;
+}
+
 .post {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #50545f;
+  border-radius: 7px;
 }
 
 .post__title {
@@ -119,6 +139,7 @@ code {
 }
 
 .post__short-description {
+  color: #50545f;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
