@@ -7,7 +7,9 @@
             <span class="post__short-description">
                 {{ $post->content }}
             </span>
-            <button class="btn btn-info">
+            <button class="btn btn-info"
+                    onclick="window.location='{{ route('post', $post->slug) }}'"
+            >
                 Read more
             </button>
         </div>

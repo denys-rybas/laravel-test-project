@@ -13,4 +13,9 @@ class PostsService
             ->paginate(9);
     }
 
+    public function getPostBySlug(string $slug)
+    {
+        return Post::where('slug', $slug)->first();
+    }
+
 }
