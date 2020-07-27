@@ -1,5 +1,9 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 /*base*/
 @import "base/reset";
+/*bootstrap*/
+@import '~bootstrap/scss/bootstrap';
 /*utilities*/
 @import "utilities/variables";
 /*vendors*/
@@ -10,3 +14,5 @@
 @import "components/pagination";
 @import "components/post";
 @import "components/button";
+
+
