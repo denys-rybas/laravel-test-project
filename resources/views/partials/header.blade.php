@@ -14,9 +14,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('posts') }}">Posts</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                @role('admin')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('adm-home') }}">Admin panel</a>
+                    </li>
+                @endrole
+
             </ul>
             {{--Right side--}}
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
