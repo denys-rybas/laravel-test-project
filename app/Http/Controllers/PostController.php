@@ -19,8 +19,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->postsService->getPosts();
-
-        return view('pages.posts', ['posts' => $posts]);
+        return view('blog.pages.posts', ['posts' => $posts]);
     }
 
     public function getPostBySlug(string $slug)
@@ -35,7 +34,7 @@ class PostController extends Controller
             return abort(404);
         }
 
-        return view('pages.post', ['post' => $post]);
+        return view('blog.pages.post', ['post' => $post]);
 
     }
 }

@@ -17,7 +17,7 @@
 </head>
 <body>
 
-@include('partials.header')
+@include('blog.partials.header')
 
 <div class="app">
     <div class="container">

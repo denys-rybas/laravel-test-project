@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /* my providers */
+        App\Providers\BladeComponentsServiceProvider::class,
         App\Providers\RolesServiceProvider::class,
         App\Providers\PermissionServiceProvider::class,
 
