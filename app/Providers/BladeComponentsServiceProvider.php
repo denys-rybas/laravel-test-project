@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use App\View\blog\Components\PostComponent;
+use App\View\Components\blog\AdminPostComponent;
+use App\View\Components\admin\BlogPostComponent;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,7 +26,9 @@ class BladeComponentsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::component('post', PostComponent::class);
-
+        /* BLOG */
+        Blade::component('blog-post', BlogPostComponent::class);
+        /* ADMIN */
+        Blade::component('admin-post', AdminPostComponent::class);
     }
 }

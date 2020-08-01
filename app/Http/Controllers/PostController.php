@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Services\PostsService;
+use App\Http\Services\admin\PostsService;
 use App\Models\Post;
 
 

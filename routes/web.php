@@ -13,5 +13,5 @@ Route::get('/post/{slug}', 'PostController@getPostBySlug')->name('post');
 
 /* ADMIN */
 Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function () {
-   Route::get('/', 'Admin\AdminController@index')->name('adm-home');
+    Route::get('/', 'Admin\PostController@index')->name('adm-posts');
 });

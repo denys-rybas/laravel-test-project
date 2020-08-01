@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\blog\Components;
+namespace App\View\Components\blog;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class PostComponent extends Component
+class AdminPostComponent extends Component
 {
     public $posts;
 
@@ -26,6 +26,6 @@ class PostComponent extends Component
      */
     public function render()
     {
-        return view('blog.components.post');
+        return view('components.blog.blog-post-component');
     }
 }

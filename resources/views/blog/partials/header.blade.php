@@ -16,7 +16,7 @@
                 </li>
                 @role('admin')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('adm-home') }}">Admin panel</a>
+                        <a class="nav-link" href="{{ route('adm-posts') }}">Admin panel</a>
                     </li>
                 @endrole
 

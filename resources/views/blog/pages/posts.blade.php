@@ -3,7 +3,7 @@
 @section('content')
 
     <section>
-        <x-post :posts="$posts"></x-post>
+        <x-blog-post :posts="$posts"></x-blog-post>
     </section>
 
 @endsection

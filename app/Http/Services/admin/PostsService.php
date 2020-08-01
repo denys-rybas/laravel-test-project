@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Services;
+
+namespace App\Http\Services\admin;
+
 
 use App\Models\Post;
 
@@ -9,7 +11,6 @@ class PostsService
     public function getPosts()
     {
         return Post::select('title', 'slug', 'content', 'created_at', 'category_id')
-            ->with('category')
             ->paginate(9);
     }
 
@@ -17,5 +18,4 @@ class PostsService
     {
         return Post::where('slug', $slug)->first();
     }
-
 }

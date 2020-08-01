@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Services;
+namespace App\Http\Services\blog;
 
 
 use App\Models\Category;
