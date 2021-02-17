@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    protected $categoriesService;
+    protected CategoriesService $categoriesService;
 
     public function __construct(CategoriesService $categoriesService)
     {

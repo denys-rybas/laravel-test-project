@@ -1,5 +1,8 @@
 <?php
 
+use Bugsnag\BugsnagLaravel\BugsnagServiceProvider;
+use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
+
 return [
 
     /*
@@ -39,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /* my providers */
+        BugsnagServiceProvider::class,
+
         App\Providers\BladeComponentsServiceProvider::class,
         App\Providers\RolesServiceProvider::class,
         App\Providers\PermissionServiceProvider::class,
@@ -231,6 +236,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Bugsnag' => Bugsnag::class,
 
     ],
 

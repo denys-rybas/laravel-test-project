@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\admin\PostsService;
-use App\Models\Post;
 
 
 class PostController extends Controller
 {
-    protected $postsService;
+    protected PostsService $postsService;
 
     public function __construct(PostsService $postsService)
     {
