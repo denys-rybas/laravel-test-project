@@ -2,6 +2,9 @@
 
 use Bugsnag\BugsnagLaravel\BugsnagServiceProvider;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
+use Collective\Html\FormFacade;
+use Collective\Html\HtmlFacade;
+use Collective\Html\HtmlServiceProvider;
 
 return [
 
@@ -16,7 +19,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Laravel Test'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +58,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://laravel-test'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -165,6 +168,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        HtmlServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -238,6 +243,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Bugsnag' => Bugsnag::class,
+        'Form' => FormFacade::class,
+        'Html' => HtmlFacade::class,
 
     ],
 

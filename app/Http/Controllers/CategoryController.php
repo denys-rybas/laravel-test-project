@@ -7,11 +7,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    protected CategoriesService $categoriesService;
 
-    public function __construct(CategoriesService $categoriesService)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->categoriesService = $categoriesService;
     }
 }
