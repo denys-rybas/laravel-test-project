@@ -7,6 +7,7 @@ use Illuminate\View\View;
 
 class AdminPostComponent extends Component
 {
+
     public $posts;
 
     /**
@@ -26,6 +27,20 @@ class AdminPostComponent extends Component
      */
     public function render()
     {
-        return view('components.blog.blog-post-component');
+        // return view('components.admin.admin-post-component');
+
+        /**
+         * return callback to access the component name, attributes, and slot..
+         * just for test now
+         *
+         * @param array $data
+         * @return array|string
+         */
+        return function (array $data) {
+            return view('components.admin.admin-post-component', [
+                'posts' => $data['posts'],
+            ])->render();
+        };
+
     }
 }

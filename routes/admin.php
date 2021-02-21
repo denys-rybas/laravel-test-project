@@ -1,9 +1,7 @@
 <?php
 
 
-use Illuminate\Support\Facades\Route;
-
 // 'middleware' => 'role:admin'
-Route::group([], function () {
-    Route::resource('/','PostController')->name('index', 'adm-posts');
-});
+
+Route::get('/', 'IndexController')->name('index');
+Route::resource('/posts', 'PostController');

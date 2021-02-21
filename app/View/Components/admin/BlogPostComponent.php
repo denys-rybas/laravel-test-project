@@ -26,6 +26,6 @@ class BlogPostComponent extends Component
      */
     public function render()
     {
-        return view('components.admin.admin-post-component');
+        return view('components.blog.blog-post-component');
     }
 }
