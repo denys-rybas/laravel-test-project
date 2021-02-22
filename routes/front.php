@@ -1,7 +1,5 @@
 <?php
 
-Auth::routes();
-
 /* home */
 Route::get('/', 'IndexController@index')->name('home');
 /* posts */
