@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 
 
 class PostController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');

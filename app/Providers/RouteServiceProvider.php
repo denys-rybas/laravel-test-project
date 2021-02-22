@@ -20,9 +20,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers\Front';
 
     protected string $namespaceAdmin = 'App\Http\Controllers\Admin';
+
+    protected string $namespaceAuth = 'App\Http\Controllers\Auth';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -44,6 +46,10 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
+
+        $this->mapAuthRoutes();
+
+        $this->mapFrontRoutes();
 
         $this->mapAdminRoutes();
 
@@ -67,17 +73,28 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
+     * Auth routes with correct namespace. ( Auth::routes() )
      *
      * @return void
      */
-    protected function mapWebRoutes()
+    protected function mapAuthRoutes(): void
     {
-        Route::middleware('web')
+        Route::middleware(['web'])
+            ->namespace($this->namespaceAuth)
+            ->group(base_path('routes/auth.php'));
+    }
+
+    /**
+     * Define the "front" routes for the application.
+     *
+     * @return void
+     */
+    protected function mapFrontRoutes(): void
+    {
+        Route::middleware(['web'])
+            ->domain(config('app.front_domain'))
             ->namespace($this->namespace)
-            ->group(base_path('routes/web.php'));
+            ->group(base_path('routes/front.php'));
     }
 
     /**\
@@ -87,10 +104,23 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapAdminRoutes(): void
     {
-        $domain = config('app.url');
-
-        Route::domain("a.{$domain}")
+        Route::middleware(['web'])
+            ->domain(config('app.admin_domain'))
             ->namespace($this->namespaceAdmin)
             ->group(base_path('routes/admin.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace('App\Http\Controllers')
+            ->group(base_path('routes/web.php'));
     }
 }

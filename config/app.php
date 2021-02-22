@@ -60,6 +60,12 @@ return [
 
     'url' => env('APP_URL', 'http://laravel-test'),
 
+    'scheme' => env('APP_SCHEME', 'http://'),
+
+    'front_domain' => env('APP_FRONT_DOMAIN', 'laravel-test'),
+
+    'admin_domain' => env('APP_ADMIN_DOMAIN', 'a.laravel-test'),
+
     'asset_url' => env('ASSET_URL', null),
 
     /*
