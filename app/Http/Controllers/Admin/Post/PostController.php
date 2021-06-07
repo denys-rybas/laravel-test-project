@@ -71,7 +71,6 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        // TODO: bind slug to fetch Post instance in RouteServiceProvider
         dd($post);
     }
 
