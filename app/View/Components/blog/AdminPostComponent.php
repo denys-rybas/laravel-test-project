@@ -2,8 +2,9 @@
 
 namespace App\View\Components\blog;
 
+use Closure;
 use Illuminate\View\Component;
-use Illuminate\View\View;
+use Throwable;
 
 class AdminPostComponent extends Component
 {
@@ -23,9 +24,9 @@ class AdminPostComponent extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return View|string
+     * @return Closure
      */
-    public function render()
+    public function render(): Closure
     {
         // return view('components.admin.admin-post-component');
 
@@ -34,13 +35,14 @@ class AdminPostComponent extends Component
          * just for test now
          *
          * @param array $data
+         *
          * @return array|string
+         * @throws Throwable
          */
-        return function (array $data) {
+        return static function (array $data) {
             return view('components.admin.admin-post-component', [
                 'posts' => $data['posts'],
             ])->render();
         };
-
     }
 }

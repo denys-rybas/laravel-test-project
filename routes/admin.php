@@ -1,7 +1,6 @@
 <?php
 
-
 // 'middleware' => 'role:admin'
 
-Route::get('/', 'IndexController')->name('index');
-Route::resource('/posts', 'PostController');
+Route::get('/', 'Admin\Home\HomeController')->name('index');
+Route::resource('/posts', 'Admin\Post\PostController');

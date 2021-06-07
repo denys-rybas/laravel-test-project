@@ -20,11 +20,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers\Front';
-
-    protected string $namespaceAdmin = 'App\Http\Controllers\Admin';
-
-    protected string $namespaceAuth = 'App\Http\Controllers\Auth';
+    protected $namespace = 'App\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -33,8 +29,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
     }
 
@@ -64,7 +58,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapApiRoutes()
+    protected function mapApiRoutes(): void
     {
         Route::prefix('api')
             ->middleware('api')
@@ -80,7 +74,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapAuthRoutes(): void
     {
         Route::middleware(['web'])
-            ->namespace($this->namespaceAuth)
+            ->namespace($this->namespace)
             ->group(base_path('routes/auth.php'));
     }
 
@@ -106,7 +100,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['web'])
             ->domain(config('app.admin_domain'))
-            ->namespace($this->namespaceAdmin)
+            ->namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
     }
 
@@ -120,7 +114,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            ->namespace('App\Http\Controllers')
+            ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
 }

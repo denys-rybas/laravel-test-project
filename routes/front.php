@@ -1,7 +1,7 @@
 <?php
 
 /* home */
-Route::get('/', 'IndexController@index')->name('home');
+Route::get('/', 'Front\IndexController@index')->name('home');
 /* posts */
-Route::get('/posts', 'PostController@index')->name('posts');
-Route::get('/post/{slug}', 'PostController@getPostBySlug')->name('post');
+Route::get('/posts', 'Front\PostController@index')->name('posts');
+Route::get('/post/{slug}', 'Front\PostController@getPostBySlug')->name('post');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
@@ -67,12 +67,12 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        // TODO: bind slug to fetch Post instance in RouteServiceProvider
+        dd($post);
     }
 
     /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
-class IndexController extends Controller
+class HomeController extends Controller
 {
     /**
      * @return View
